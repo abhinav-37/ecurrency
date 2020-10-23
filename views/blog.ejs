@@ -74,137 +74,33 @@
                 <div class="col-lg-9">
                     <div class="blog-content-wrapper">
                         <div class="row mtn-30">
+                            <% if(blogData){ %>
+                            <% for(const blog of blogData){ %>
                             <div class="col-md-6">
                                 <div class="blog-item">
-                                    <figure class="blog-thumb">
-                                        <a href="blog-details.html"><img src="img/service/01.jpg"
-                                                alt="Businex-Blog" /></a>
-                                    </figure>
+
                                     <div class="blog-content">
-                                        <h2 class="h5"><a href="blog-details.html">Master Business Plan</a></h2>
-                                        <p>We have great creative team they always ready
-                                            to helped you. voluptatem quiase voluptase
-                                            aspernatur auted fugit</p>
+                                        <h2 class="h5"><a href="/singleBlog/<%= blog.id %> "> <%= blog.title %> </a>
+                                        </h2>
+                                        <p> <%= blog.description.substring(0,50) %> </p>
 
                                         <div class="blog-meta">
                                             <a href="#">By: Mohin Smith</a>
-                                            <a href="#">May 03, 2019</a>
+
+                                            <a href="#"> <%= blog.timeStamp.toString().substring(0,16) %> </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <% } %>
+                            <% } %>
 
-                            <div class="col-md-6">
-                                <div class="blog-item">
-                                    <figure class="blog-thumb">
-                                        <a href="blog-details.html"><img src="img/service/02.jpg"
-                                                alt="Businex-Blog" /></a>
-                                    </figure>
-                                    <div class="blog-content">
-                                        <h2 class="h5"><a href="blog-details.html">Corporate Conference 2019</a></h2>
-                                        <p>We have great creative team they always ready
-                                            to helped you. voluptatem quiase voluptase
-                                            aspernatur auted fugit</p>
 
-                                        <div class="blog-meta">
-                                            <a href="#">By: Raju Ahammad</a>
-                                            <a href="#">May 04, 2019</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="col-md-6">
-                                <div class="blog-item">
-                                    <figure class="blog-thumb">
-                                        <a href="blog-details.html"><img src="img/service/03.jpg"
-                                                alt="Businex-Blog" /></a>
-                                    </figure>
-                                    <div class="blog-content">
-                                        <h2 class="h5"><a href="blog-details.html">New Business Strategy</a></h2>
-                                        <p>We have great creative team they always ready
-                                            to helped you. voluptatem quiase voluptase
-                                            aspernatur auted fugit</p>
-
-                                        <div class="blog-meta">
-                                            <a href="#">By: Raju Ahammad</a>
-                                            <a href="#">May 04, 2019</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="blog-item">
-                                    <figure class="blog-thumb">
-                                        <a href="blog-details.html"><img src="img/service/04.jpg"
-                                                alt="Businex-Blog" /></a>
-                                    </figure>
-                                    <div class="blog-content">
-                                        <h2 class="h5"><a href="blog-details.html">Master Business Plan</a></h2>
-                                        <p>We have great creative team they always ready
-                                            to helped you. voluptatem quiase voluptase
-                                            aspernatur auted fugit</p>
-
-                                        <div class="blog-meta">
-                                            <a href="#">By: Mohin Smith</a>
-                                            <a href="#">May 03, 2019</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="blog-item">
-                                    <figure class="blog-thumb">
-                                        <a href="blog-details.html"><img src="img/service/05.jpg"
-                                                alt="Businex-Blog" /></a>
-                                    </figure>
-                                    <div class="blog-content">
-                                        <h2 class="h5"><a href="blog-details.html">Corporate Conference 2019</a></h2>
-                                        <p>We have great creative team they always ready
-                                            to helped you. voluptatem quiase voluptase
-                                            aspernatur auted fugit</p>
-
-                                        <div class="blog-meta">
-                                            <a href="#">By: Raju Ahammad</a>
-                                            <a href="#">May 04, 2019</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="blog-item">
-                                    <figure class="blog-thumb">
-                                        <a href="blog-details.html"><img src="img/service/06.jpg"
-                                                alt="Businex-Blog" /></a>
-                                    </figure>
-                                    <div class="blog-content">
-                                        <h2 class="h5"><a href="blog-details.html">New Business Strategy</a></h2>
-                                        <p>We have great creative team they always ready
-                                            to helped you. voluptatem quiase voluptase
-                                            aspernatur auted fugit</p>
-
-                                        <div class="blog-meta">
-                                            <a href="#">By: Raju Ahammad</a>
-                                            <a href="#">May 04, 2019</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
-                    <div class="pagination-wrap">
-                        <ul class="pagination">
-                            <li class="prev"><a href="#"><i class="fa fa-long-arrow-left"></i> Previous</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li class="next"><a href="#">Next <i class="fa fa-long-arrow-right"></i></a></li>
-                        </ul>
-                    </div>
+
                 </div>
 
                 <div class="col-lg-3">
@@ -311,7 +207,150 @@
 
     <!--== Start Footer Area Wrapper ==-->
     <%- include("partials/footer") -%>
+    <!--== End Footer Area Wrapper ==-->
 
+    <!-- Scroll Top Button -->
+    <button class="btn-scroll-top"><i class="mdi mdi-chevron-up"></i></button>
+
+
+    <!-- Start Off Canvas Menu Wrapper -->
+    <aside class="off-canvas-wrapper off-canvas-cog">
+        <div class="off-canvas-overlay"></div>
+        <div class="off-canvas-inner">
+            <div class="close-btn">
+                <button class="btn-close"><i class="mdi mdi-close"></i></button>
+            </div>
+
+            <!-- Start Off Canvas Content -->
+            <div class="off-canvas-content mb-sm-30">
+                <div class="off-canvas-item">
+                    <% if(user){ %>
+                    <div class="log-in-content-wrap">
+                        <h2>USER</h2>
+                        <p><span style="font-weight: bold;">Email:</span> <%= user.username %> </p>
+                        <p> <span style="font-weight: bold;">Contact number:</span> <%= user.contact_number %> </p>
+                        <div class="form-input-item">
+                            <a href="/logout" class="btn-submit"> BUY </a>
+                        </div>
+                        <div class="form-input-item">
+                            <a href="/logout" class="btn-submit"> LOGOUT </a>
+                        </div>
+                    </div>
+                    <% }else{ %>
+                    <div id="login_form" class="log-in-content-wrap">
+                        <h2>Login</h2>
+                        <div class="login-form mtn-15">
+                            <form action="/login" method="post">
+                                <div class="form-input-item">
+                                    <label for="username" class="sr-only">Email</label>
+                                    <input type="text" name="username" id="username" placeholder="email" required>
+                                </div>
+
+                                <div class="form-input-item">
+                                    <label for="password" class="sr-only">Password</label>
+                                    <input type="password" name="password" id="password" placeholder="Password"
+                                        required>
+                                </div>
+
+                                <div class="form-input-item">
+                                    <button type="submit" class="btn-submit">Login</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="sign-up-notification">
+                            <p>Not Resisted? <a id="register_click" style="cursor: pointer;">Create Account Now.</a></p>
+                        </div>
+                    </div>
+                    <div style="display: none;" id="register_form" class="log-in-content-wrap">
+                        <h2>Register</h2>
+                        <div class="login-form mtn-15">
+                            <form action="/register" method="post">
+                                <div class="form-input-item">
+                                    <label for="first_name" class="sr-only">First name</label>
+                                    <input required type="text" id="first_name" name="first_namae"
+                                        placeholder="First name">
+                                </div>
+                                <div class="form-input-item">
+                                    <label for="last_name" class="sr-only">Last name</label>
+                                    <input required type="text" id="last_name" name="last_name" placeholder="Last name">
+                                </div>
+                                <div class="form-input-item">
+                                    <label for="reg_username" class="sr-only">Email</label>
+                                    <input required type="email" id="reg_username" name="username" placeholder="Email">
+                                </div>
+
+                                <div class="form-input-item">
+                                    <label for="contact_number" class="sr-only">Contact number</label>
+                                    <input required type="number" id="contact_number" placeholder="contact number"
+                                        name="contact_number">
+                                </div>
+                                <div class="form-input-item">
+                                    <label for="reg_password" class="sr-only">Password</label>
+                                    <input required type="password" id="reg_password" name="password"
+                                        placeholder="password">
+                                </div>
+                                <div class="form-input-item">
+                                    <label for="re_password" class="sr-only">Password</label>
+                                    <input required type="password" id="re_password" name="re_password"
+                                        placeholder="Retype password">
+                                </div>
+
+                                <div class="form-input-item">
+                                    <button type="submit" class="btn-submit">Register</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="sign-up-notification">
+                            <p>Already Resisted? <a style="cursor: pointer;" id="get_login">Login Now.</a></p>
+                        </div>
+                    </div>
+
+                    <% } %>
+                </div>
+
+                <div class="off-canvas-item mt-sm-30">
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://dribbble.com" target="_blank"><i class="fa fa-dribbble"></i></a>
+                        <a href="https://pinterest.com" target="_blank"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                    <div class="copyright-content">
+                        <p> © Businex 2019. All Right Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- End Off Canvas Menu Wrapper -->
+
+
+
+
+
+
+
+    <!-- Start Off Canvas Menu Wrapper -->
+    <aside class="off-canvas-wrapper off-canvas-menu">
+        <div class="off-canvas-overlay"></div>
+        <div class="off-canvas-inner">
+            <!-- Start Off Canvas Header -->
+            <div class="close-btn">
+                <button class="btn-close"><i class="mdi mdi-close"></i></button>
+            </div>
+
+            <!-- Start Off Canvas Content -->
+            <div class="off-canvas-content">
+                <div class="res-mobile-menu">
+
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- End Off Canvas Menu Wrapper -->
 
     <!--=======================Javascript============================-->
     <script src="js/modernizr-3.6.0.min.js"></script>
@@ -330,7 +369,20 @@
 
     <!--=== Active Js ===-->
     <script src="js/active.min.js"></script>
+    <script>
+        let login_form = $("#login_form");
+        let register_form = $("#register_form");
+        $("#register_click").click(function () {
 
+            login_form.hide();
+            register_form.show()
+        });
+        $("#get_login").click(function () {
+
+            register_form.hide();
+            login_form.show()
+        })
+    </script>
     <!-- REVOLUTION JS FILES -->
     <script src="js/revslider/jquery.themepunch.tools.min.js"></script>
     <script src="js/revslider/jquery.themepunch.revolution.min.js"></script>
